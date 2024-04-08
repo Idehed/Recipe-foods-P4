@@ -1,20 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
 
     /* Fonts */
-    --title: 'Roboto-mono', 'serif';
+    --title: 'Anton', 'serif';
     --main-font: 'Roboto', 'serif';
 
     /* Colors */
+    --background: #3f006a0f;
     --orange: #ffc107;
+    --green: #00AB66;
+    --off-white: #f6f6f6;
+    --white: #fff;
+    --earth-green: #d7da9f;
+
+    /* Utils */
+    --smal-box-shadow: 1px -1px 7px 0 #00000061;
+    --border: 1px solid #00000030;   
 }
-img {
-    height: 40px;
-    width: 40px;
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: var(--white);
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+}
+
+/* Header */
+.navbar-brand {
+    font-family: var(--title);
+    color: var(--off-white);
+}
+
+img.logo {
+    height: 30px;
+    width: 30px;
     margin-right: 5px;
+}
+
+.nav-link {
+    color: var(--off-white);
 }
 
 .nav-link:hover {
     color: var(--orange);
+}
+
+.active {
+    color: var(--orange) !important;
 }
