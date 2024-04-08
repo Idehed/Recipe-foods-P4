@@ -41,7 +41,7 @@ main {
 /* Footer */
 footer {
     flex-shrink: 0;
-    background-color: var(--background);
+    background-color: #484848;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -61,9 +61,24 @@ footer {
 }
 
 /* Header */
+
+/* Log in button */
+.d-flex {
+    margin-right: 60px;
+}
+
+.btn {
+    border-radius: 15px;
+}
+
+.navbar {
+    background-color: #484848;
+}
+
 .navbar-brand {
     font-family: var(--title);
     color: var(--off-white);
+    margin-left: 60px;
 }
 
 img.logo {
