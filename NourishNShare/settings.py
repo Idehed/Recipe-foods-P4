@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-idehed-recipe-foods-p4-s7q6txaflb.us1.codeanyapp.com"]
+ALLOWED_HOSTS = ["8000-idehed-recipe-foods-p4-s7q6txaflb.us1.codeanyapp.com", "8000-idehed-recipefoodsp4-qrh5u1vc34t.ws-eu110.gitpod.io"]
 
 
 # Application definition
