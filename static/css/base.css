@@ -97,4 +97,13 @@ img.logo {
 
 .active {
     color: var(--orange) !important;
+    font-weight: 500;
+}
+
+/* Forms */
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 5px;
 }
