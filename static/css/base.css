@@ -21,6 +21,7 @@
 
 html, body {
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -38,31 +39,9 @@ main {
     background-color: var(--white);
 }
 
-/* Footer */
-footer {
-    flex-shrink: 0;
-    background-color: #484848;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-top: var(--border);
-}
-
-.social-icon {
-    height: 2rem;
-    margin: 1rem;
-}
-
-.social-icon-youtube {
-    height: 2.7rem;
-    margin: 1rem;
-
-}
-
 /* Header */
 
-/* Log in button */
+/* Search field */
 .d-flex {
     margin-right: 60px;
 }
@@ -100,13 +79,39 @@ img.logo {
     font-weight: 500;
 }
 
+/* Footer */
+footer {
+    flex-shrink: 0;
+    background-color: #484848;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
+}
+
+.social-icon-youtube {
+    height: 2.7rem;
+    margin: 1rem;
+
+}
+
 /* Home page */
-.home-page-image {
+.home-main-div {
     background-image: url("../images/ella-olsson-KPDbRyFOTnE-unsplash.webp");
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
 }
+
 
 /* Forms */
 .form {
