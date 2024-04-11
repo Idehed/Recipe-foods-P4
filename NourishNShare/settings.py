@@ -48,8 +48,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home', 
-    'crispy_forms' ,
-    'crispy_bootstrap5' ,
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'recipes',
 ]
 
 SITE_ID = 1
