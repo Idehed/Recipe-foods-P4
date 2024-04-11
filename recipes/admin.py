@@ -5,7 +5,7 @@ from .models import Recipe
 class RecipeAdmin(admin.ModelAdmin):
     list_display= (
         'title',
-        'meal_types',
+        'meal_type',
         'calories',
         'instructions',
         'ingredients',
