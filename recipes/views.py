@@ -1,6 +1,7 @@
 from django.views.generic import CreateView
 
 from .models import Recipe
+from .forms import RecipeForm
 
 class AddRecipe(CreateView):
     """
@@ -8,6 +9,7 @@ class AddRecipe(CreateView):
     """
     template_name = 'recipes/add_recipe.html'
     model = Recipe
+    form_class= RecipeForm
     sucess_url = '/recipes/'
 
     def form_valid(self, form):
