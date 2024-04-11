@@ -10,7 +10,7 @@ class AddRecipe(CreateView):
     template_name = 'recipes/add_recipe.html'
     model = Recipe
     form_class= RecipeForm
-    sucess_url = '/recipes/'
+    success_url = '/recipes/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
