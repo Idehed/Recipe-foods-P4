@@ -100,6 +100,14 @@ img.logo {
     font-weight: 500;
 }
 
+/* Home page */
+.home-page-image {
+    background-image: url("../images/ella-olsson-KPDbRyFOTnE-unsplash.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
 /* Forms */
 .form {
     width: 100%;
