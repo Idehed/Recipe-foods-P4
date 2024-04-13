@@ -3,22 +3,21 @@
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
+<h1 class="text-center p-2 d-block">
+  Latest Recipes
+</h1>
 <div class="container d-flex flew-row flex-wrap justify-content-center">
-    <h1 class="text center p-2">
-        Latest Recipes
-    </h1>
-
-    {% for recipe in recipes %}
-    <a href="" class="recipes" aria-label="Click to view{{recipe.title}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_description}}">
-            <div class="card-body">
-              <h2 class="card-title">{{recipe.title}}</h2>
-              <p class="card-text">{{recipe.description|truncatechars:100}}</p>
-            </div>
-          </div>
-    </a>
-    {% endfor %}
+  {% for recipe in recipes %}
+  <a href="" class="recipes" aria-label="Click to view {{recipe.title}}">
+    <div class="card m-3" style="width: 18rem;">
+      <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_description}}">
+      <div class="card-body">
+        <h2 class="card-title">{{recipe.title}}</h2>
+        <p class="card-text">{{recipe.description|truncatechars:100}}</p>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
 </div>
 
 
