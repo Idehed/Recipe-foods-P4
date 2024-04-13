@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin 
 
 from .models import Recipe
@@ -11,6 +11,14 @@ class Recipes(ListView):
     template_name = 'recipes/recipes.html'
     model = Recipe
     context_object_name = 'recipes'
+
+class RecipeDetail(DetailView):
+    """
+    View a single recipe
+    """
+    template_name = 'recipes/recipes.html'
+    model = Recipe
+    context_object_name = 'recipe'
 
 class AddRecipe(LoginRequiredMixin, CreateView):
     """
