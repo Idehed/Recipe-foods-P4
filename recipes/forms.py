@@ -1,21 +1,31 @@
-from django import forms 
+from django import forms
 from djrichtextfield.widgets import RichTextWidget
 from .models import Recipe
 
 
 class RecipeForm(forms.ModelForm):
     """
-    Form for the create a recipe page 
+    Form for the create a recipe page
     """
+
     class Meta:
         model = Recipe
-        fields = ['title', 'description', 'ingredients', 'instructions', 'image', 'image_description', 'meal_type', 'calories']
-        
+        fields = [
+            "title",
+            "description",
+            "ingredients",
+            "instructions",
+            "image",
+            "image_description",
+            "meal_type",
+            "calories",
+        ]
+
         ingredients = forms.CharField(widget=RichTextWidget())
         instructions = forms.CharField(widget=RichTextWidget())
 
         widget = {
-            'description': forms.Textarea(attrs={'rows': 5}),
+            "description": forms.Textarea(attrs={"rows": 5}),
         }
 
         labels = {
