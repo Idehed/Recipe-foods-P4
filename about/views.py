@@ -1,4 +1,4 @@
 from django.views.generic import TemplateView
 
-class Index(TemplateView):
+class About(TemplateView):
     template_name= 'about/about.html'
