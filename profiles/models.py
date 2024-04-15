@@ -7,7 +7,7 @@ from django.dispatch import receiver
 
 from django_resized import ResizedImageField
 
-class Profiles(models.Model):
+class Profile(models.Model):
     """
     Profile model
     """
@@ -21,7 +21,7 @@ class Profiles(models.Model):
         return str(self.user.username)
 
 @receiver(post_save, sender=User)
-def create_user_profiles(instance, created, **kwargs):
+def create_user_profile(instance, created, **kwargs):
     """
     Create or update the user profile
     """
