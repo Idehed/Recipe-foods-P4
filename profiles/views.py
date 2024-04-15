@@ -8,7 +8,7 @@ class Profiles(TemplateView):
     template_name = "profiles/profile.html"
 
     def get_context_date(self, **kwargs):
-        profile = Profile.object.get(user=self.kwargs["pk"])
+        profile = Profile.objects.get(user=self.kwargs["pk"])
         context = {
             'profile': profile
         }
