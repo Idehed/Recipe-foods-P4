@@ -4,28 +4,24 @@
 {% block title %}About NourishNShare {% endblock %}
 
 {% block content %}
-<div class="clearfix">
-    <img src=" {% static 'images/ella-olsson-KPDbRyFOTnE-unsplash.webp' %} " class="col-md-6 float-md-end mb-3 ms-md-3" alt="...">
-  
-    <p>
-        NourishNShare began as a passion project among a group of culinary enthusiasts who simply loved to cook and share recipes. Their journey started with a shared love for food and a desire to bring people together through the joy of cooking.
-        Drawing from their diverse culinary backgrounds and experiences, they curated a collection of delicious recipes spanning cuisines from around the world.
-    </p>
-  
-    <p>
-        Driven by their belief in the power of food to create connections and foster community, they launched NourishNShare as a platform to showcase their culinary creations and share their love for cooking with others. 
-        From savory mains to decadent desserts, their recipe catalog grew as they experimented with flavors and techniques, 
-        always striving to inspire others to get creative in the kitchen.
-    </p>
-  
-    <p>
-        As their online presence grew, so did their community of followers, who eagerly awaited each new recipe post or cooking tip. 
-        What started as a small endeavor quickly blossomed into a vibrant online community of food lovers, united by their passion for exploring new flavors and sharing their culinary adventures.
-    </p>
-    
-    <p>
-        With a focus on inclusivity and accessibility, NourishNShare welcomed home cooks of all skill levels, encouraging them to embark on their own culinary journeys with confidence.
-        Whether it was a simple weeknight meal or an elaborate dinner party spread, the company's recipes and cooking tips were designed to empower people to unleash their inner chef and create memorable meals to share with loved ones.
-    </p>
-  </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4 text-center">
+            <img src="{% static 'images/ella-olsson-KPDbRyFOTnE-unsplash.webp' %}" width="75%" />
+        </div>
+        <div class="col-8">
+            <!-- Title goes between these h2 tags -->
+            <h2>{{ about.title }}</h2>
+            <!-- Content goes directly underneath this -->
+            {{ about.content | safe }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-right">
+            <!-- Updated on field goes in here -->
+
+            <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+        </div>
+    </div>
+</div>
 {% endblock %}
