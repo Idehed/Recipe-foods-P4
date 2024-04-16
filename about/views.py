@@ -1,4 +1,5 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from .models import About
 
 def about_me(request):
     """
@@ -6,8 +7,8 @@ def about_me(request):
     """
     about = About.objects.all().order_by('-updated_on').first()
 
-    request render(
+    return render(
         request,
-        "about/about.html"
+        "about/about.html",
         {"about": about},
     )
