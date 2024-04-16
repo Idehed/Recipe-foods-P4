@@ -6,7 +6,7 @@
 <h1 class="text-center p-2 d-block">
   Latest Recipes
 </h1>
-<div class="container d-flex flew-row flex-wrap justify-content-center">
+<div class="container d-flex flex-row flex-wrap justify-content-center">
   {% for recipe in recipes %}
   <a href="{% url 'recipe_detail' recipe.id %} " class="recipes" aria-label="Click to view {{recipe.title}}">
     <div class="card m-3" style="width: 18rem;">

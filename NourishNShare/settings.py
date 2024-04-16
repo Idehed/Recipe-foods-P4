@@ -63,8 +63,6 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
 
 DJRICHTEXTFIELD_CONFIG = {
     'js': ['//cdn.ckeditor.com/4.14.0/standard/ckeditor.js'],
@@ -190,8 +188,6 @@ LOGIN_REDIRECT_URL = '/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Cloudinary settings 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

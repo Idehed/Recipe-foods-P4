@@ -34,9 +34,7 @@ class Recipe(models.Model):
     image_description = models.CharField(max_length=150, null=False, blank=False)
     meal_type = models.CharField(max_length=50, choices=MEAL_TYPES, default="breakfast")
     calories = models.IntegerField()
-    posted_date = models.DateTimeField(
-        auto_now=True,
-    )
+    posted_date = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-posted_date"]
