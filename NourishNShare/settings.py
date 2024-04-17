@@ -14,7 +14,6 @@ from pathlib import Path
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
-import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -181,8 +180,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-config = cloudinary.config(secure=True)
 # Account Setup 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -200,9 +197,6 @@ LOGIN_REDIRECT_URL = '/'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-STATICFILES_STORAGE = (
-    "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
-)
 
 # Cloudinary settings 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
