@@ -61,6 +61,10 @@ main {
     margin-left: 60px;
 }
 
+.navbar-brand:hover {
+    color: var(--off-white) !important;
+}
+
 img.logo {
     height: 30px;
     width: 30px;
