@@ -1,7 +1,7 @@
 form django import forms 
 from .models import Contact
 
-class ContactForm(forms.Form):
+class ContactForm(forms.ModelForm):
     """
     A form for the user to reach out to the admin
     """
