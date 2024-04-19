@@ -9,5 +9,5 @@ class Contact(models.Model):
     message = models.TextField(max_length=700)
     read = models.BooleanField(default=False)
 
-    def__str__(self):
-        return f'Message from {self.name}'
+    def __str__(self):
+        return f"Message from {self.name}"
