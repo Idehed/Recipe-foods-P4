@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Recipe Detail - {{recipe.title}}{% endblock %}
 
 {% block content %}
@@ -83,4 +83,8 @@
           </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}

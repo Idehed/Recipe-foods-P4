@@ -122,10 +122,10 @@ def comment_edit(request, pk, comment_id):
     """
     if request.method == "POST":
 
-        comments = CommentRecipe.objects.filter(recipe=recipe)
         recipe = get_object_or_404(Recipe, pk=pk)
-        comment = get_object_or_404(Comment, pk=comment_id)
-        comment_form = CommentForm(data=request.POST, instance=comment)
+        comments = CommentRecipe.objects.filter(recipe=recipe)
+        comment = get_object_or_404(CommentRecipe, pk=comment_id)
+        comment_form = CommentRecipeForm(data=request.POST, instance=comment)
 
         if comment_form.is_valid() and comment.user == request.user:
             comment = comment_form.save(commit=False)
@@ -136,4 +136,4 @@ def comment_edit(request, pk, comment_id):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
-    return HttpResponseRedirect(reverse('recipes/recipe_detail', args=[pk]))
+    return HttpResponseRedirect(reverse('recipe_detail', args=[pk]))
