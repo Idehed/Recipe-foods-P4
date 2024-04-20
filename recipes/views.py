@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import (
 
 from django.db.models import Q
 
-from .models import Recipe
+from .models import Recipe, CommentRecipe
 from .forms import RecipeForm
 
 

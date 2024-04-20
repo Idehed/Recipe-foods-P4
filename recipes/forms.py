@@ -1,6 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from .models import Recipe
+from .models import Recipe, CommentRecipe
 
 
 class RecipeForm(forms.ModelForm):
@@ -38,3 +38,12 @@ class RecipeForm(forms.ModelForm):
             "meal_type": "Meal Type",
             "calories": "Calories",
         }
+
+
+class CommentRecipeForm(forms.Modelform):
+    """
+    Form for creating comments on a recipe page
+    """
+    class Meta:
+        model = CommentRecipe
+        fields =('body',)
