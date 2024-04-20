@@ -40,7 +40,7 @@ class RecipeForm(forms.ModelForm):
         }
 
 
-class CommentRecipeForm(forms.Modelform):
+class CommentRecipeForm(forms.ModelForm):
     """
     Form for creating comments on a recipe page
     """

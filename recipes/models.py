@@ -58,5 +58,5 @@ class CommentRecipe(models.Model):
     class Meta:
         ordering = ["created_on"]
     
-    def__str__(self):
+    def __str__(self):
         return f"Comment {self.body} by {self.user}"

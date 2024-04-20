@@ -3,15 +3,14 @@ from django.views.generic import (
     DetailView, DeleteView,
     UpdateView
 )
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
-from django.contrib.auth.mixins import (
-    UserPassesTestMixin, LoginRequiredMixin
-)
-
+from django.http import HttpResponseRedirect
 from django.db.models import Q
-
+from django.contrib import messages
 from .models import Recipe, CommentRecipe
-from .forms import RecipeForm
+from .forms import RecipeForm, CommentRecipeForm
 
 
 class Recipes(ListView):
@@ -39,14 +38,43 @@ class Recipes(ListView):
         return recipes
 
 
-class RecipeDetail(DetailView):
+def RecipeDetail(request, pk):
     """
     View a single recipe
     """
 
     template_name = "recipes/recipe_detail.html"
-    model = Recipe
-    context_object_name = "recipe"
+    recipe = get_object_or_404(Recipe, pk=pk)
+    comments = CommentRecipe.objects.filter(recipe=recipe)
+    comments_order = recipe.comments.order_by("-created_on")
+    comment_count = recipe.comments.count()
+
+    if request.method == "POST":
+        comment_form = CommentRecipeForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.user = request.user
+            comment.recipe = recipe
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted successfully'
+            )
+            return HttpResponseRedirect(request.path_info)
+    else:
+        comment_form = CommentRecipeForm()
+
+    return render(
+        request,
+         template_name,
+        {
+            "recipe": recipe,
+            "comments": comments,
+            "comment_form": comment_form,
+            "comment_count": comment_count,
+            "template_name": template_name
+        },
+    )
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):
