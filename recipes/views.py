@@ -114,3 +114,26 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+
+def comment_edit(request, pk, comment_id):
+    """
+    view to edit comments
+    """
+    if request.method == "POST":
+
+        comments = CommentRecipe.objects.filter(recipe=recipe)
+        recipe = get_object_or_404(Recipe, pk=pk)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.user == request.user:
+            comment = comment_form.save(commit=False)
+            comment.recipe = recipe
+            comment.approved = False
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+
+    return HttpResponseRedirect(reverse('recipes/recipe_detail', args=[pk]))
