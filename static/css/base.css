@@ -171,7 +171,7 @@ footer {
 }
 
 /* Recipes */ 
-.card {
+.card-recipes {
     height: 90%;
     margin-top: 1rem;
 }
@@ -248,7 +248,15 @@ footer {
 }
 
 /* Comments */
+.display-comments {
+    border: none;
+    border-radius: 0px 25px 25px 0px;
+}
 
+.create-comment {
+    border: none;
+    border-radius : 25px 0px 0px 25px;
+}
 .comment-user {
     background-color: var(--dark_green);
 }
