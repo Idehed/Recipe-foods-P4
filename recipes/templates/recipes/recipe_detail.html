@@ -47,7 +47,7 @@
                     <button id="submitButton" type="submit" class="btn btn-success">Submit</button>
                 </form>
                 {% else %}
-                <p>Log in to leave a comment</p>
+                <p><a href="{{ login_url }}" class="sign-in">Sign in </a> to leave a comment</p>
                 {% endif %}
             </div>
         </div>
@@ -57,7 +57,7 @@
               <!-- For loop start -->
               {% for comment in comments %}
               <div class="p-2 comments">
-                <p class="font-weight-bold comment-author">
+                <p class="font-weight-bold comment-user">
                   {{ comment.user }}
                    wrote:
                 </p>
@@ -70,10 +70,10 @@
                 </span>
                 <div class="mt-2">
                   {% if user.is_authenticated and comment.user == user %}
-                  <button class="btn btn-delete"
-                    comment_id="{{ comment.id }}">Delete</button>
-                  <button class="btn btn-edit"
+                  <button class="btn btn-success"
                     comment_id="{{ comment.id }}">Edit</button>
+                  <button class="btn btn-danger"
+                    comment_id="{{ comment.id }}">Delete</button>
                   {% endif %}
                 </div>
               </div>
