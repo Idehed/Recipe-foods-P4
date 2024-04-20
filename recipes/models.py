@@ -41,3 +41,22 @@ class Recipe(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+class CommentRecipe(models.Model):
+    """
+    Model for the comment section in the detailed recipe view
+    """
+    recipe = models.ForeignKey(Recipe, related_name="comments",
+                               on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="commenter",
+                               on_delete=models.CASCADE)
+
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_on"]
+    
+    def__str__(self):
+        return f"Comment {self.body} by {self.user}"

@@ -22,7 +22,9 @@ class Recipes(ListView):
     template_name = "recipes/recipes.html"
     model = Recipe
     context_object_name = "recipes"
-
+    """
+    function for the search bar 
+    """
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
         if query:
