@@ -4,84 +4,102 @@
 
 {% block content %}
 <div class="container">
-    <div class="recipe-info mt-3 p-1">
-        <div class="recipe-img">
-            <img src="{{ recipe.image.url }}" alt="{{ recipe.image_description }}" class="recipe-pic rounded">
-        </div>
-        <div class="recipe-detail">
-            <h1 class="text-center">{{ recipe.title }}</h1>
-            <p class="text-center">Posted by {{recipe.user}} on {{recipe.posted_date}}</p>
-            <hr>
-            <p>{{recipe.description}}</p>
-            <p><strong>Calories: </strong>{{ recipe.calories }}</p>
-            <p><strong>Meal type: </strong>{{ recipe.meal_type|title }}</p>
+  <div class="recipe-info mt-3 p-1">
+    <div class="recipe-img">
+      <img src="{{ recipe.image.url }}" alt="{{ recipe.image_description }}" class="recipe-pic rounded">
+    </div>
+    <div class="recipe-detail">
+      <h1 class="text-center">{{ recipe.title }}</h1>
+      <p class="text-center">Posted by {{recipe.user}} on {{recipe.posted_date}}</p>
+      <hr>
+      <p>{{recipe.description}}</p>
+      <p><strong>Calories: </strong>{{ recipe.calories }}</p>
+      <p><strong>Meal type: </strong>{{ recipe.meal_type|title }}</p>
 
-            {% if request.user == recipe.user %}
-            <div class="text-center">
-                <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-success w-25">Edit</a>
-                <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger w-25">Delete</a>
-            </div>
-            {% endif %}
-        </div>
+      {% if request.user == recipe.user %}
+      <div class="text-center">
+        <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-success w-25">Edit</a>
+        <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger w-25">Delete</a>
+      </div>
+      {% endif %}
     </div>
-    <div class="recipe-container">
-        <div class="ingredients p-3">
-            <h2>Ingredients</h2>
-            <p>{{ recipe.ingredients|safe }}</p>
-        </div>
-        <div class="instructions p-3">
-            <h2>Instructions</h2>
-            <p>{{ recipe.instructions|safe }}</p>
-        </div>
+  </div>
+  <div class="recipe-container">
+    <div class="ingredients p-3">
+      <h2>Ingredients</h2>
+      <p>{{ recipe.ingredients|safe }}</p>
     </div>
-    <!-- Creating New Comments -->
-    <div class="row comment-row container">
-        <div class="col-md-4 card mb-4  create-comment">
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-success">Submit</button>
-                </form>
-                {% else %}
-                <p><a href="{{ login_url }}" class="sign-in">Sign in </a> to leave a comment</p>
-                {% endif %}
-            </div>
-        </div>
-        <div class="col-md-7 card mb-4 display-comments">
-            <div class="card-body">
-                <h3>Comments:</h3>
-              <!-- For loop start -->
-              {% for comment in comments %}
-              <div class="p-2 comments">
-                <p class="font-weight-bold comment-user">
-                  {{ comment.user }}
-                   wrote:
-                </p>
-                <div id="comment{{ comment.id }}">
-                  {{ comment.body | linebreaks }}
-                </div>
-                <hr>
-                <span class="font-weight-normal">
-                  {{ comment.created_on }}
-                </span>
-                <div class="mt-2">
-                  {% if user.is_authenticated and comment.user == user %}
-                  <button class="btn btn-success"
-                    comment_id="{{ comment.id }}">Edit</button>
-                  <button class="btn btn-danger"
-                    comment_id="{{ comment.id }}">Delete</button>
-                  {% endif %}
-                </div>
-              </div>
-              <!-- Our for loop ends here -->
-              {% endfor %}
-            </div>
+    <div class="instructions p-3">
+      <h2>Instructions</h2>
+      <p>{{ recipe.instructions|safe }}</p>
+    </div>
+  </div>
+  <!-- Creating New Comments -->
+  <div class="row comment-row container">
+    <div class="col-md-4 card mb-4  create-comment">
+      <div class="card-body">
+        {% if user.is_authenticated %}
+        <h3>Leave a comment:</h3>
+        <p>Posting as: {{ user.username }}</p>
+        <form id="commentForm" method="post" style="margin-top: 1.3em;">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button id="submitButton" type="submit" class="btn btn-success">Submit</button>
+        </form>
+        {% else %}
+        <p><a href="{{ login_url }}" class="sign-in">Sign in </a> to leave a comment</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-md-7 card mb-4 display-comments">
+      <div class="card-body">
+        <h3>Comments:</h3>
+        <!-- For loop start -->
+        {% for comment in comments %}
+        <div class="p-2 comments">
+          <p class="font-weight-bold comment-user">
+            {{ comment.user }}
+            wrote:
+          </p>
+          <div id="comment{{ comment.id }}">
+            {{ comment.body | linebreaks }}
           </div>
+          <hr>
+          <span class="font-weight-normal">
+            {{ comment.created_on }}
+          </span>
+          <div class="mt-2">
+            {% if user.is_authenticated and comment.user == user %}
+            <button class="btn btn-success" comment_id="{{ comment.id }}">Edit</button>
+            <button class="btn btn-danger" comment_id="{{ comment.id }}">Delete</button>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Our for loop ends here -->
+        {% endfor %}
+      </div>
     </div>
+  </div>
+  <!-- Delete confirmation modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete your comment?
+          This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a id="deleteConfirm" href="#" class="btn
+        btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
