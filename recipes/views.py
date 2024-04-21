@@ -137,3 +137,19 @@ def comment_edit(request, pk, comment_id):
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[pk]))
+
+def comment_delete(request, pk, comment_id):
+    """
+    view to delete comment
+    """
+    comments = CommentRecipe.objects.filter(recipe=recipe)
+    recipe = get_object_or_404(Recipe, pk=pk)
+    comment = get_object_or_404(CommentRecipe, pk=comment_id)
+
+    if comment.user == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+    return HttpResponseRedirect(reverse('recipe_detail', args=[pk]))
