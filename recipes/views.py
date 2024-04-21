@@ -142,7 +142,6 @@ def comment_delete(request, pk, comment_id):
     """
     view to delete comment
     """
-    comments = CommentRecipe.objects.filter(recipe=recipe)
     recipe = get_object_or_404(Recipe, pk=pk)
     comment = get_object_or_404(CommentRecipe, pk=comment_id)
 
