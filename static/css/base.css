@@ -114,8 +114,7 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
-    width: 100%;
-    opacity: 1;   
+    width: 100%;    
 }
 
 .btn-width {
@@ -260,6 +259,15 @@ footer {
 .comment-user {
     background-color: var(--dark_green);
 }
+
+/* Django Messages */
+
+.alert-dismissible {
+    margin-top: 20px;
+    background-color: var(--dark_green);
+    color: var(--beige-light);
+}
+
 
 @media screen and (min-width: 62.5em) {
     .recipe-info {
