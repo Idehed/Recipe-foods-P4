@@ -30,7 +30,8 @@
         <div class="profile-recipes">
             <h2 class="text-center pb-4">My Shared Recipes</h2>
             {% for recipe in profile.user.recipe_owner.all %}
-            <a href="{% url 'recipe_detail' recipe.id %}">
+            <a href="{% url 'recipe_detail' recipe.id %}" class="color-title">
+                <a href="{% url 'recipe_detail' recipe.id %}"> <img src="{{ recipe.image.url }}" alt="" class="rounded profile-r-img"></a>
                 <h3>{{ recipe.title }}</h3>
             </a>
             {{ recipe.posted_date }}
