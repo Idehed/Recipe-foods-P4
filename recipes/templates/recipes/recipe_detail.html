@@ -34,6 +34,17 @@
       <p>{{ recipe.instructions|safe }}</p>
     </div>
   </div>
+  <!-- Displaying count of comments -->
+  <div class="row">
+    <div class="col-12">
+      <strong class="text-secondary">
+        <i class="far fa-comments"></i> {{ comment_count }}
+      </strong>
+    </div>
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
   <!-- Creating New Comments -->
   <div class="row comment-row container">
     <div class="col-md-4 card mb-4  create-comment">

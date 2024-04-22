@@ -37,6 +37,13 @@ class Recipes(ListView):
             recipes = self.model.objects.all()
         return recipes
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Calculate comment count for each post
+        for recipe in context['recipes']:
+            recipe.comment_count = recipe.comments.count()
+        return context
+
 
 def RecipeDetail(request, pk):
     """
