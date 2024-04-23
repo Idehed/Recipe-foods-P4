@@ -37,6 +37,9 @@ class Recipe(models.Model):
     posted_date = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name="liked_recipes")
 
+    def total_likes(self):
+        return self.likes.count()
+
     class Meta:
         ordering = ["-posted_date"]
 

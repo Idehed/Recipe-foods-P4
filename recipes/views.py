@@ -55,6 +55,10 @@ def RecipeDetail(request, pk):
     comments = CommentRecipe.objects.filter(recipe=recipe)
     comments_order = recipe.comments.order_by("-created_on")
     comment_count = recipe.comments.count()
+    liked = False
+
+    if recipe.likes.filter(id=request.user.id).exists():
+        liked = True
 
     if request.method == "POST":
         comment_form = CommentRecipeForm(data=request.POST)
@@ -76,6 +80,7 @@ def RecipeDetail(request, pk):
          template_name,
         {
             "recipe": recipe,
+            "liked" : liked,
             "comments": comments,
             "comment_form": comment_form,
             "comment_count": comment_count,
