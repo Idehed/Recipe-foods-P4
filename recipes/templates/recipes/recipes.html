@@ -16,19 +16,19 @@
         <p class="card-text">{{recipe.description|truncatechars:100}}</p>
         <div class="row">
           <div class="col-12">
-            <strong class="comment-count">
-              {% if recipe.comment_count > 0 %}
-                  <i class="far fa-comments"></i> {{ recipe.comment_count }}
-              {% else %}
-                  <i class="far fa-comments"></i> {{ recipe.comment_count }}
-              {% endif %}
-            </strong>
-
-            <span class="like-count">
+            <strong class="like-count">
               {% if recipe.number_of_likes > 0 %}
                 <i class="far fa-heart"></i> {{ recipe.total_likes }}
               {% else %}
                 <i class="far fa-heart"></i> {{ recipe.total_likes }}
+              {% endif %}
+            </strong>
+
+            <span class="comment-count">
+              {% if recipe.comment_count > 0 %}
+                  <i class="far fa-comments"></i> {{ recipe.comment_count }}
+              {% else %}
+                  <i class="far fa-comments"></i> {{ recipe.comment_count }}
               {% endif %}
             </span>
           </div>
