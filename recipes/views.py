@@ -84,6 +84,17 @@ def RecipeDetail(request, pk):
     )
 
 
+def LikeView(request, pk):
+    recipe = get_object_or_404(Recipe, id=request.POST.get('like_id'))
+    recipe.likes.add(request.user)
+    messages.add_message(
+                request, messages.SUCCESS,
+                'You have successfully liked this post!'
+                )
+
+    return HttpResponseRedirect(reverse('recipe_detail', args=[str(pk)]))
+
+
 class AddRecipe(LoginRequiredMixin, CreateView):
     """
     Add recipe view
