@@ -21,6 +21,7 @@ class Recipes(ListView):
     template_name = "recipes/recipes.html"
     model = Recipe
     context_object_name = "recipes"
+    paginate_by = 2
     """
     function for the search bar 
     """
