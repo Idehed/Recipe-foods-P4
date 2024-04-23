@@ -6,10 +6,11 @@
 {% block content %}
 <div class="container mt-5">
     <div class="row">
-        <div class="col-4 text-center">
-            <img src="{% static 'images/ella-olsson-KPDbRyFOTnE-unsplash.webp' %}" width="75%" />
+        <div class="col-5 text-center">
+            <img class=" float-start col-7 col-md-5 col-lg-4"
+            src="{% static 'images/ella-olsson-KPDbRyFOTnE-unsplash.webp' %}" width="75%" />
         </div>
-        <div class="col-8">
+        <div class="col-12">
             <!-- Title goes between these h2 tags -->
             <h2>{{ about.title }}</h2>
             <!-- Content goes directly underneath this -->
