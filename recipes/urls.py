@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (
     AddRecipe, Recipes, 
     RecipeDetail, DeleteRecipe,
-    EditRecipe, comment_edit, comment_delete
+    EditRecipe, comment_edit, comment_delete,
+    LikeView
 )
 from .import views
 
@@ -15,5 +16,6 @@ urlpatterns = [
          views.comment_edit, name='comment_edit'),
     path('<slug:pk>/delete_comment/<int:comment_id>',
          views.comment_delete, name='comment_delete'),
+    path('like/<slug:pk>', LikeView, name="like_recipes")
     path("", Recipes.as_view(), name="recipes"),
 ]
