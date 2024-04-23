@@ -23,6 +23,14 @@
                   <i class="far fa-comments"></i> {{ recipe.comment_count }}
               {% endif %}
             </strong>
+
+            <span class="like-count">
+              {% if recipe.number_of_likes > 0 %}
+                <i class="far fa-heart"></i> {{ recipe.total_likes }}
+              {% else %}
+                <i class="far fa-heart"></i> {{ recipe.total_likes }}
+              {% endif %}
+            </span>
           </div>
       </div>
       </div>

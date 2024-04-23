@@ -43,7 +43,7 @@
         {% csrf_token %}
         {% if liked %}
         <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-success btn-sm"><i
-            class="fa-regular fa-heart"></i></button>{{ recipe.total_likes }} Like
+            class="fa-regular fa-heart"></i></button> {{ recipe.total_likes }} Like
         {% else %}
         <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-success btn-sm"><i
             class="fa-regular fa-heart"></i></button> {{ recipe.total_likes }} Like
