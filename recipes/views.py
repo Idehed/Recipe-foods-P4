@@ -91,11 +91,23 @@ def RecipeDetail(request, pk):
 
 def LikeView(request, pk):
     recipe = get_object_or_404(Recipe, id=request.POST.get('like_id'))
-    recipe.likes.add(request.user)
-    messages.add_message(
-                request, messages.SUCCESS,
-                'You have successfully liked this post!'
-                )
+    liked = False
+
+    if recipe.likes.filter(id=request.user.id).exists():
+        recipe.likes.remove(request.user)
+        liked = False
+        messages.add_message(
+            request, messages.SUCCESS,
+            'You have successfully unliked this post!'
+            )
+
+    else:
+        recipe.likes.add(request.user)
+        liked = True
+        messages.add_message(
+            request, messages.SUCCESS,
+            'You have successfully liked this post!'
+            )
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[str(pk)]))
 

@@ -34,18 +34,28 @@
       <p>{{ recipe.instructions|safe }}</p>
     </div>
   </div>
-  <!-- Displaying count of comments -->
+  
   <div class="row">
     <div class="col-12">
-      <form action="{% url 'like_recipes' recipe.pk %}" method="POST" >
+      <!-- Shows the count on likes -->
+      {% if user.is_authenticated %}
+      <form action="{% url 'like_recipes' recipe.pk %}" method="POST">
         {% csrf_token %}
-        <button type="submit", name="like_id", value="{{ recipe.id }}",
-         class="btn btn-success btn-sm"><i class="fa-regular fa-heart"></i></button>
-          {{ recipe.total_likes }} Like
-      <strong class="text-secondary ms-1">
-        <i class="far fa-comments"></i>  {{ comment_count }}
-      </strong>
-    </form>
+        {% if liked %}
+        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-success btn-sm"><i
+            class="fa-regular fa-heart"></i></button>{{ recipe.total_likes }} Like
+        {% else %}
+        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-success btn-sm"><i
+            class="fa-regular fa-heart"></i></button> {{ recipe.total_likes }} Like
+        {% endif %}
+      </form>
+      {% else %}
+      <span><i class="fa-regular fa-heart"></i></span>
+      {% endif %}
+      <!-- Displaying count of comments -->
+      <span class="text-secondary ms-1">
+        <i class="far fa-comments heart-icon"></i> {{ comment_count }} Comment
+      </span>
     </div>
     <div class="col-12">
       <hr>
