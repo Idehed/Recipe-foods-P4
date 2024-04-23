@@ -40,6 +40,11 @@
       <strong class="text-secondary">
         <i class="far fa-comments"></i> {{ comment_count }}
       </strong>
+      <form action="{% url 'like_recipe' recipe.pk %}" method="POST" >
+        {% csrf_token %}
+        <button type="submit", name="like_id", value="{{ recipe.id }}",
+         class="btn btn-success btn-sm">Like</button>
+    </form>
     </div>
     <div class="col-12">
       <hr>

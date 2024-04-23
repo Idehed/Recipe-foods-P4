@@ -35,6 +35,7 @@ class Recipe(models.Model):
     meal_type = models.CharField(max_length=50, choices=MEAL_TYPES, default="breakfast")
     calories = models.IntegerField()
     posted_date = models.DateTimeField(auto_now=True)
+    likes = models.ManyToManyField(User, related_name="liked_recipes")
 
     class Meta:
         ordering = ["-posted_date"]
