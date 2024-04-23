@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Recipes{% endblock %}
 
 {% block content %}
@@ -39,5 +39,18 @@
   {% endfor %}
 </div>
 
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/infinity.min.js"></script>
+    <script>
+        let infinite = new Waypoint.Infinite({
+            element: $('.infinite-container')[0],
+            offset: 'bottom-in-view',
+            onBeforePageLoad: function () {
 
+            },
+            onAfterPageLoad: function () {
+
+            }
+        });
+    </script>
 {% endblock %}
