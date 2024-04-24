@@ -279,11 +279,15 @@ footer {
 .display-comments {
     border: none;
     border-radius: 0px 25px 25px 0px;
+    color: var(--off-white);
+    background-color: black;
 }
 
 .create-comment {
     border: none;
     border-radius : 25px 0px 0px 25px;
+    color: var(--off-white);
+    background-color: black;
 }
 .comment-user {
     background-color: var(--dark_green);
