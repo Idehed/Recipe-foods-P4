@@ -193,6 +193,7 @@ footer {
 .card-recipes {
     height: 90%;
     margin-top: 1rem;
+    background-color: var(--off-white);
 }
 
 .recipes {
@@ -252,10 +253,6 @@ footer {
     text-align: center;
 }
 
-.profile-recipes {
-    width: 100%;
-}
-
 .color-title {
     color: #212529;
 }
@@ -268,14 +265,28 @@ footer {
     height: 100px;
 }
 
-/* Login page */
+.mt-text {
+    margin-top: 5px;
+}
+
+/* Hide the checkbox for remember me */
 .form-check .form-check-input {
-    float:  none !important;
+    display: none;
+}
+
+.form-check-label {
+    display: none;
 }
 
 .sign-in, .sign-up {
     color: var(--green) !important;
     text-decoration: none;
+}
+
+ /* Log out page */
+    
+ .log-out {
+    margin-top: 10%;
 }
 
 /* Comments */
@@ -325,6 +336,7 @@ footer {
 @media screen and (max-width: 576px) {
 
     /* Home page */
+
     .home-text-bg {
         width: 60vw;
         margin-left: 20%;
@@ -336,8 +348,7 @@ footer {
         width: 30% !important;
     }
 
-    .btn {
-        padding: 5px;
+    .btn-home {
         margin-left: 10px;
     }
 
@@ -350,10 +361,46 @@ footer {
     }
 
     /* About page */ 
-    .col-12 {
+
+    .about-text {
         padding: 25px;
     }
+
+    /* Recipes */
+
+    .title-recipe {
+        margin-top: 10px;
+    }
+
+    .create-comment {
+        border-radius: 25px 25px;
+    } 
     
+    .display-comments {
+        border-radius: 25px 25px;
+    }
+
+    .comment-row {
+        margin-left: 1px;
+    }
+
+    .form-addr {
+        padding: 10px 25px;
+    }
+
+
+    /* Form sizing */
+
+    .form-sizing {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    /* Log out page */
+    
+    .log-out {
+        margin-top: 30%;
+    }
 }
 
 @media screen and (min-width: 992px) {

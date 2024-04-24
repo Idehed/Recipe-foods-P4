@@ -14,7 +14,7 @@
                 <img src="{% static '/icons/no-photography-icon.svg' %}" alt="Image not found">
                 {% endif %}
             </div>
-            <h1>{{ profile.user.username }}</h1>
+            <h1 class="mt-text">{{ profile.user.username }}</h1>
             <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
             <p><strong>Recipes: </strong>{{ profile.user.recipe_owner.count }}</p>
             {% if profile.bio is not none %}
@@ -32,7 +32,7 @@
             {% for recipe in profile.user.recipe_owner.all %}
             <a href="{% url 'recipe_detail' recipe.id %}" class="color-title">
                 <a href="{% url 'recipe_detail' recipe.id %}"> <img src="{{ recipe.image.url }}" alt="" class="rounded profile-r-img"></a>
-                <h3>{{ recipe.title }}</h3>
+                <h3 class="mt-text">{{ recipe.title }}</h3>
             </a>
             {{ recipe.posted_date }}
             <hr>
