@@ -66,11 +66,15 @@ main {
 
 .navbar-brand {
     font-family: var(--title);
-    color: var(--off-white);
+    color: var(--white);
 }
 
 .navbar-brand:hover {
     color: var(--off-white) !important;
+}
+
+.icon-div {
+    color: var(--orange);
 }
 
 /* Setting color to the hambuger icon */
@@ -343,6 +347,11 @@ footer {
 
     .mt-4 {
         margin-top: 6rem !important;
+    }
+
+    /* About page */ 
+    .col-12 {
+        padding: 25px;
     }
     
 }
