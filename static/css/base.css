@@ -466,6 +466,14 @@ footer {
         width: 15% !important;
     }
 
+    .delete-w {
+        width: 21%;
+    }
+
+    .margin-t {
+        margin-top: 30px !important;
+    }
+
     /* Contact page */
 
     .col-md-6 {
@@ -522,5 +530,14 @@ footer {
 
     .profile-recipes a {
         text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+    /* About page */
+
+    .col-md-12 {
+        width: 40%;
     }
 }
