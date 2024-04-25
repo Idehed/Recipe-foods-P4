@@ -433,6 +433,18 @@ footer {
     .w-25 {
         width: 18% !important;
     }
+
+    /* Recipe page */
+
+    .w-25 {
+        width: 25% !important;
+    }
+
+    /* Contact page */
+
+    .col-md-6 {
+        width: 80%;
+    }
 }
 
 @media screen and (min-width: 992px) {
