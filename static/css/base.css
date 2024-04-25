@@ -282,17 +282,21 @@ img.logo {
     border: none;
     border-radius: 0px 25px 25px 0px;
     color: var(--off-white);
-    background-color: black;
+    background-color: rgb(2, 35, 7);
 }
 
 .create-comment {
     border: none;
     border-radius : 25px 0px 0px 25px;
     color: var(--off-white);
-    background-color: black;
+    background-color: rgb(2, 35, 7);
 }
 .comment-user {
     background-color: var(--dark_green);
+    width: fit-content;
+    border-radius: 10px 10px 10px 10px;
+    padding: 3px;
+    margin-left: -10px;
 }
 
 /* Like count */
@@ -410,6 +414,15 @@ footer {
         padding: 10px 25px;
     }
 
+    .comment-user {
+        margin-left: -30px;
+        border-radius: 0px 25px 25px 0px;
+    }
+
+    .padding {
+        padding: 0px !important;
+    }
+
 
     /* Form sizing */
 
@@ -424,9 +437,6 @@ footer {
         font-size: calc(1rem + 1vw) !important;
     }
     
-    .p-2 {
-        padding: 0px;
-    }
 
     /* Log out page */
     
