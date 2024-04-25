@@ -376,6 +376,14 @@ footer {
         padding: 25px;
     }
 
+    .col-5 {
+        width: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
     /* Recipes */
 
     .title-recipe {
@@ -430,14 +438,24 @@ footer {
         top: 30%;
     }
 
-    .w-25 {
-        width: 18% !important;
+    /* About page */ 
+    
+    .col-5 {
+        width: 100%;
+    }
+
+    .col-md-12 {
+        width: 60%;
+    }
+
+    .col-6 {
+        width: 100%;
     }
 
     /* Recipe page */
 
     .w-25 {
-        width: 25% !important;
+        width: 15% !important;
     }
 
     /* Contact page */
@@ -448,6 +466,13 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
+
+    /* Home page */
+
+    .mt-4 {
+        margin-top: 20rem !important;
+    }
+
     .recipe-info {
         flex-direction: row;
     }
