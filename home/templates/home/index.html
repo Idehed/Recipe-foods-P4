@@ -23,10 +23,10 @@
                     {% if request.user.is_authenticated %}
                     <a class="btn btn-home btn-width1 btn-warning w-25 mb-2 
                             {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact
-                        us!</a>
+                        us</a>
                     {% else %}
                     <a class="btn btn-home btn-width1 btn-warning w-25 mb-2 
-                            {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Log
+                            {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Sign
                         in</a>
                     {% endif %}
                 </div>
