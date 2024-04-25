@@ -272,6 +272,13 @@ footer {
 .close {
     cursor: pointer;
 }
+
+.profile-model {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
 /* Hide the checkbox for remember me */
 .form-check .form-check-input {
     display: none;
@@ -397,6 +404,16 @@ footer {
     .form-sizing {
         margin-left: 15px;
         margin-right: 15px;
+    }
+
+    /* Profile page */
+
+    .fs-1 {
+        font-size: calc(1rem + 1vw) !important;
+    }
+    
+    .p-2 {
+        padding: 0px;
     }
 
     /* Log out page */
