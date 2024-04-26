@@ -8,7 +8,7 @@ def contact_view(request):
         contact_form = ContactForm(data=request.POST)
         if contact_form.is_valid():
             contact_form.save()
-            messages.add_message(request, messages.SUCCESS, "Hi, Thank you for reaching out! This is to confirm that we have received your form submission. "
+            messages.add_message(request, messages.SUCCESS, "Thank you for reaching out!"
             " We appreciate your interest and will be in touch shortly. "
             "Best regards, NourishNShare")
             return HttpResponseRedirect(request.path_info)
