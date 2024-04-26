@@ -524,11 +524,44 @@ footer {
         margin-top: 30px !important;
     }
 
+    .recipe-info {
+        flex-direction: row;
+    }
+
+    .recipe.img {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .recipe-detail {
+        width: 60%;
+        padding: 2rem;
+    }
+
+    .recipe-container {
+        flex-direction: row;
+    }
+
+    .ingredients {
+        width: 33.33%;
+    }
+
+    .instructions {
+        width: 66.66%;
+    }
+
+    /* Create a reecipe page */
+
+    .form {
+        width: 70%;
+    }
+
     /* Contact page */
 
     .col-md-6 {
         width: 80%;
     }
+
 }
 
 @media screen and (min-width: 992px) {
