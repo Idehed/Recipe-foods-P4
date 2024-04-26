@@ -323,10 +323,16 @@ img.logo {
 }
 
 
- /* Log out page */
+/* Log out page */
     
  .log-out {
     margin-top: 10%;
+}
+
+/* Sign up page */
+
+.sign-up-container {
+    margin-top: 20px;
 }
 
 /* Comments */
@@ -660,5 +666,11 @@ footer {
 
     .col-md-12 {
         width: 40%;
+    }
+
+    /* Sign up page */
+
+    .sign-up-container {
+        width: 70%;
     }
 }
