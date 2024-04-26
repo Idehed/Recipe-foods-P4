@@ -9,7 +9,7 @@
         <form method="post" class="text-center">
             {% csrf_token %}
             <p>Are you sure you want to delete "{{object.title}}"?</p>
-            <input type="submit" value="Confirm" class="btn btn-danger delete-w">
+            <input type="submit" value="Confirm" class="btn btn-danger delete-w border-red">
         </form>
     </div>
 </div>

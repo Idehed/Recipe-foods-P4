@@ -58,6 +58,7 @@ main {
 
 .btn {
     border-radius: 15px;
+    border-width: 2px;
 }
 
 .navbar {
@@ -99,6 +100,20 @@ img.logo {
 .active {
     color: var(--orange) !important;
     font-weight: 500;
+}
+
+/* Border buttons */
+
+.border-orange {
+    border-color: #74650f;
+}
+
+.border-green {
+    border-color: #194722;
+}
+
+.border-red {
+    border-color: #640303;
 }
 
 
@@ -381,14 +396,14 @@ footer {
     /* Home page */
 
     .home-text-bg {
-        width: 60vw;
-        margin-left: 20%;
-        top: 33%;
+        width: 65vw;
+        margin-left: 18%;
+        top: 35%;
         padding: 10px;
     }
     
     .w-25 {
-        width: 30% !important;
+        width: 36% !important;
     }
 
     .btn-home {
@@ -478,7 +493,7 @@ footer {
     /* Home page */
 
     .home-text-bg {
-        top: 30%;
+        top: 25%;
     }
 
     /* About page */ 
@@ -498,7 +513,7 @@ footer {
     /* Recipe page */
 
     .w-25 {
-        width: 15% !important;
+        width: 18% !important;
     }
 
     .delete-w {
@@ -570,6 +585,12 @@ footer {
 
 @media screen and (min-width: 1024px) {
     
+    /* Home page */ 
+
+    .home-text-bg {
+        top: 40%;
+    }
+
     /* About page */
 
     .col-md-12 {

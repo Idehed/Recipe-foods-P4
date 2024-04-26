@@ -23,7 +23,7 @@
 
             {% if request.user == profile.user %}
             <div>
-                <button id="myBtn" class="btn btn-success w-25 mb-4">Edit</button>
+                <button id="myBtn" class="btn btn-success w-25 mb-4 border-green">Edit</button>
             </div>
             {% endif %}
         </div>
@@ -51,7 +51,7 @@
                 {{ form|crispy }}
                 {{ form.media }}
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-success w-25">Edit</button>
+                    <button type="submit" class="btn btn-success w-25 border-green">Edit</button>
                 </div>
             </form>
         </div>
