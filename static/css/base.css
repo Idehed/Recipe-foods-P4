@@ -185,18 +185,30 @@ img.logo {
 
 /* Recipes */ 
 .card-recipes {
-    height: 90%;
+    position: relative;
+    height: 93%;
     margin-top: 1rem;
     background-color: var(--off-white);
 }
 
+.like-comment-container {
+    position: absolute; 
+    bottom: 0; 
+    padding: 3px; 
+  }
+
+
 .recipes {
     text-decoration: none;
     color: black;
+    margin-bottom: 15px;
 }
 
 .recipes:hover {
     cursor: pointer;
+    transform: scale(1.09);
+    color: black;
+    transition: .5s;
 }
 
 .recipe-info {
@@ -343,6 +355,7 @@ img.logo {
 
 .like-count {
     margin-right: 10px;
+    color: var(--green);
 }
 
 /* Django Messages */
@@ -560,6 +573,25 @@ footer {
 
     .col-md-6 {
         width: 80%;
+    }
+
+    /* Profile page */ 
+
+    .profile {
+        flex-direction: row;
+    }
+
+    .info {
+        width: 50%;
+    }
+
+    .profile-recipes {
+        width: 70%;
+        padding: 1rem 5rem;
+    }
+
+    .profile-recipes a {
+        text-decoration: none;
     }
 
 }
