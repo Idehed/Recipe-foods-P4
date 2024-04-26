@@ -271,6 +271,31 @@ img.logo {
     text-decoration: none;
 }
 
+#div_id_login {
+    text-align: left;
+}
+
+#div_id_password {
+    text-align: left;
+}
+
+#div_id_email {
+    text-align: left;
+}
+
+#div_id_username {
+    text-align: left;
+}
+
+#div_id_password1 {
+    text-align: left;
+}
+
+#div_id_password2 {
+    text-align: left;
+}
+
+
  /* Log out page */
     
  .log-out {
