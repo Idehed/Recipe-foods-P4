@@ -4,7 +4,7 @@
 
 [**Live site**]()
 
-![Device Mockups](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/ebe2823a-5d9b-4bde-9e03-c608a784f0e1)
+![Device Mockups](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/76f70c61-0819-4b0a-996f-a4d94c288090)
 
 # Content
 
