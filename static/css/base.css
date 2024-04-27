@@ -160,12 +160,6 @@ img.logo {
     background-color: #689d66;
 }
 
-.home-text-div {
-    top: 50%;
-    position: relative;
-    transform: translateY(-50%)
-}
-
 .header-text {
     color: var(--white);
 }
