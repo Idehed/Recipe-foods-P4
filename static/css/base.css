@@ -702,7 +702,11 @@ footer {
     /* Home page */ 
 
     .home-text-bg {
-        top: 40%;
+        top: 30%;
+    }
+
+    .mt-4 {
+        margin-top: 20rem !important;
     }
 
     /* About page */
@@ -715,5 +719,14 @@ footer {
 
     .sign-up-container {
         width: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    /* Home page */
+    
+    .mt-4 {
+        margin-top: 14rem !important;
     }
 }
