@@ -725,8 +725,14 @@ footer {
 @media screen and (min-width: 1200px) {
 
     /* Home page */
-    
+
     .mt-4 {
         margin-top: 14rem !important;
+    }
+
+    /* About page */
+
+    .col-md-12 {
+        width: 30%;
     }
 }
