@@ -18,10 +18,10 @@
           <div class="row">
             <div class="col-12 icon-container">
               <strong class="like-count">
-                {% if recipe.number_of_likes > 0 %}
-                <i class="far fa-heart"></i> {{ recipe.total_likes }}
+                {% if recipe.total_likes > 0 %}
+                <i class="fa-regular fa-thumbs-up"></i> {{ recipe.total_likes }}
                 {% else %}
-                <i class="far fa-heart"></i> {{ recipe.total_likes }}
+                <i class="fa-regular fa-thumbs-up"></i> {{ recipe.total_likes }}
                 {% endif %}
               </strong>
 

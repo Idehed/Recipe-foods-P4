@@ -42,16 +42,16 @@
       {% if user.is_authenticated %}
       <form action="{% url 'like_recipes' recipe.pk %}" method="POST">
         {% csrf_token %}
-        {% if liked %}
-        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-success border-green btn-sm"><i
-            class="fa-regular fa-heart"></i></button> {{ recipe.total_likes }} Like
+        {% if liked == 1 %}
+        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-success border-green btn-sm"><i 
+          class="fa-regular fa-thumbs-up"></i></button> {{ recipe.total_likes }} Like
         {% else %}
-        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-outline-success btn-sm border-green"><i
-            class="fa-regular fa-heart"></i></button> {{ recipe.total_likes }} Like
+        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-outline-success btn-sm border-green"><i 
+          class="fa-regular fa-thumbs-up"></i></button> {{ recipe.total_likes }} Likes
         {% endif %}
       </form>
       {% else %}
-      <span><i class="fa-regular fa-heart"></i> {{ recipe.total_likes }} Like</span>
+      <span><i class="fa-regular fa-thumbs-up"></i> {{ recipe.total_likes }} Like</span>
       {% endif %}
       <!-- Displaying count of comments -->
       <span class="text-secondary ms-1">
