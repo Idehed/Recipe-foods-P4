@@ -149,9 +149,7 @@ img.logo {
 .heading-text {
     color: white;
     text-shadow: 0 2px 4px #000000d9;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width: 100%;
+   
 }
 
 .background-black {
