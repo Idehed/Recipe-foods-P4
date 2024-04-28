@@ -43,10 +43,10 @@
       <form action="{% url 'like_recipes' recipe.pk %}" method="POST">
         {% csrf_token %}
         {% if liked %}
-        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-success border-green btn-sm"><i 
+        <button type="submit" name="like_id" value="{{ recipe.id }}" class="btn btn-success border-green btn-sm"><i 
           class="fa-regular fa-thumbs-up"></i></button> {{ recipe.total_likes }} Likes
         {% else %}
-        <button type="submit" , name="like_id" , value="{{ recipe.id }}" , class="btn btn-outline-success btn-sm border-green"><i 
+        <button type="submit" name="like_id" value="{{ recipe.id }}" class="btn btn-outline-success btn-sm border-green"><i 
           class="fa-regular fa-thumbs-up"></i></button> {{ recipe.total_likes }} Likes
         {% endif %}
       </form>

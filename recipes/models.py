@@ -31,8 +31,10 @@ class Recipe(models.Model):
         blank=False,
         null=False,
     )
-    image_description = models.CharField(max_length=150, null=False, blank=False)
-    meal_type = models.CharField(max_length=50, choices=MEAL_TYPES, default="breakfast")
+    image_description = models.CharField(max_length=150, null=False,
+                                         blank=False)
+    meal_type = models.CharField(max_length=50, choices=MEAL_TYPES,
+                                 default="breakfast")
     calories = models.IntegerField()
     posted_date = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name="liked_recipes")
@@ -55,7 +57,8 @@ class CommentRecipe(models.Model):
     recipe = models.ForeignKey(
         Recipe, related_name="comments", on_delete=models.CASCADE
     )
-    user = models.ForeignKey(User, related_name="commenter", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="commenter",
+                             on_delete=models.CASCADE)
 
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

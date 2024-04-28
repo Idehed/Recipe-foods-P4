@@ -38,8 +38,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-idehed-recipefoodsp4-qrh5u1vc34t.ws-eu110.gitpod.io",
-    "https://8000-idehed-recipefoodsp4-qrh5u1vc34t.ws-eu110.gitpod.io.herokuapp.com",
+"https://*.gitpod.io",
+"https://*.herokuapp.com",
 ]
 
 # Application definition

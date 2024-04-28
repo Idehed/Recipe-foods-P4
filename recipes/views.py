@@ -24,7 +24,7 @@ class Recipes(ListView):
     model = Recipe
     context_object_name = "recipes"
     """
-    function for the search bar 
+    function for the search bar
     """
 
     def get_queryset(self, **kwargs):
@@ -100,14 +100,16 @@ def LikeView(request, pk):
         recipe.likes.remove(request.user)
         liked = False
         messages.add_message(
-            request, messages.SUCCESS, "You have successfully unliked this post!"
+            request, messages.SUCCESS,
+            "You have successfully unliked this post!"
         )
 
     else:
         recipe.likes.add(request.user)
         liked = True
         messages.add_message(
-            request, messages.SUCCESS, "You have successfully liked this post!"
+            request, messages.SUCCESS,
+            "You have successfully liked this post!"
         )
 
     return HttpResponseRedirect(reverse("recipe_detail", args=[str(pk)]))
@@ -172,7 +174,8 @@ def comment_edit(request, pk, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, "Comment Updated!")
         else:
-            messages.add_message(request, messages.ERROR, "Error updating comment!")
+            messages.add_message(request, messages.ERROR,
+                                 "Error updating comment!")
 
     return HttpResponseRedirect(reverse("recipe_detail", args=[pk]))
 
