@@ -7,14 +7,12 @@
     --main-font: 'Roboto', 'serif';
 
     /* Colors */
-    --background: #3f006a0f;
     --orange: #ffc107;
     --green: #00AB66;
     --dark_green: #007144;
     --off-white: #f6f6f6;
     --white: #fff;
     --beige-light: #faf0e6;
-    --beige-light2: #c9bca2;
 
     /* Utils */
     --smal-box-shadow: 1px -1px 7px 0 #00000061;
@@ -41,12 +39,31 @@ main {
     background-color: var(--beige-light);
 }
 
-.heart-icon {
-    margin-right: 7px;
-}
 .text-secondary { 
     color: black !important;
 
+}
+
+/* Border buttons */
+
+.border-orange {
+    border-color: #74650f;
+}
+
+.border-green {
+    border-color: #194722;
+}
+
+.border-red {
+    border-color: #640303;
+}
+
+/* Forms */
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 5px;
 }
 
 /* Header */
@@ -78,7 +95,7 @@ main {
     color: var(--orange);
 }
 
-/* Setting color to the hambuger icon */
+/* Setting color to the hamburger icon */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 193, 7, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");   
 }
@@ -101,21 +118,6 @@ img.logo {
     color: var(--orange) !important;
     font-weight: 500;
 }
-
-/* Border buttons */
-
-.border-orange {
-    border-color: #74650f;
-}
-
-.border-green {
-    border-color: #194722;
-}
-
-.border-red {
-    border-color: #640303;
-}
-
 
 /* Home page */
 .home-main-div {
@@ -164,15 +166,6 @@ img.logo {
 
 .mt-4 {
     margin-top: 14rem !important;
-}
-
-
-/* Forms */
-.form {
-    width: 100%;
-    margin: 3% auto;
-    box-shadow: var(--smal-box-shadow);
-    border-radius: 5px;
 }
 
 /* Recipes */ 
@@ -228,6 +221,41 @@ img.logo {
     height: auto;
 }
 
+/* Comments */
+
+.display-comments {
+    border: none;
+    border-radius: 0px 25px 25px 0px;
+    color: var(--off-white);
+    background-color: rgb(2, 35, 7);
+}
+
+.create-comment {
+    border: none;
+    border-radius : 25px 0px 0px 25px;
+    color: var(--off-white);
+    background-color: rgb(2, 35, 7);
+}
+.comment-user {
+    background-color: var(--dark_green);
+    width: fit-content;
+    border-radius: 10px 10px 10px 10px;
+    padding: 3px;
+    margin-left: -10px;
+}
+
+.comment-icon {
+    margin-right: 7px;
+}
+
+/* Like count */
+
+.like-count {
+    margin-right: 10px;
+    color: var(--green);
+}
+
+
 /* Profile page */
 .profile-img {
     width: 280px;
@@ -276,6 +304,16 @@ img.logo {
     width: 100%;
 }
 
+/* Log out/ log in page */
+    
+.log-out {
+    margin-top: 10%;
+}
+
+.sign-up-container {
+    margin-top: 20px;
+}
+
 /* Hide the checkbox for remember me */
 .form-check .form-check-input {
     display: none;
@@ -312,48 +350,6 @@ img.logo {
 
 #div_id_password2 {
     text-align: left;
-}
-
-
-/* Log out page */
-    
- .log-out {
-    margin-top: 10%;
-}
-
-/* Sign up page */
-
-.sign-up-container {
-    margin-top: 20px;
-}
-
-/* Comments */
-.display-comments {
-    border: none;
-    border-radius: 0px 25px 25px 0px;
-    color: var(--off-white);
-    background-color: rgb(2, 35, 7);
-}
-
-.create-comment {
-    border: none;
-    border-radius : 25px 0px 0px 25px;
-    color: var(--off-white);
-    background-color: rgb(2, 35, 7);
-}
-.comment-user {
-    background-color: var(--dark_green);
-    width: fit-content;
-    border-radius: 10px 10px 10px 10px;
-    padding: 3px;
-    margin-left: -10px;
-}
-
-/* Like count */
-
-.like-count {
-    margin-right: 10px;
-    color: var(--green);
 }
 
 /* Django Messages */
@@ -474,7 +470,6 @@ footer {
         padding: 0px !important;
     }
 
-
     /* Form sizing */
 
     .form-sizing {
@@ -545,7 +540,6 @@ footer {
     .sign-up-container {
         width: 85%;
     }
-   
 }
 @media screen and (min-width: 768px) {
     /* Home page */
@@ -573,8 +567,6 @@ footer {
     .w-25 {
         width: 18% !important;
     }
-
-   
 
     .margin-t {
         margin-top: 30px !important;
