@@ -2,7 +2,6 @@ const editButtons = document.getElementsByClassName("btn-success");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
-
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-danger");
 const deleteConfirm = document.getElementById("deleteConfirm");
