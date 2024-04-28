@@ -44,6 +44,7 @@ class CommentRecipeForm(forms.ModelForm):
     """
     Form for creating comments on a recipe page
     """
+
     class Meta:
         model = CommentRecipe
-        fields =('body',)
+        fields = ("body",)

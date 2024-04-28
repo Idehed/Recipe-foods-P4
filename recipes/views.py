@@ -1,7 +1,9 @@
 from django.views.generic import (
-    CreateView, ListView, 
-    DetailView, DeleteView,
-    UpdateView
+    CreateView,
+    ListView,
+    DetailView,
+    DeleteView,
+    UpdateView,
 )
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -24,15 +26,16 @@ class Recipes(ListView):
     """
     function for the search bar 
     """
+
     def get_queryset(self, **kwargs):
-        query = self.request.GET.get('q')
+        query = self.request.GET.get("q")
         if query:
             recipes = self.model.objects.filter(
-                Q(title__icontains=query) |
-                Q(description__icontains=query) |
-                Q(ingredients__icontains=query) |
-                Q(instructions__icontains=query) |
-                Q(meal_type__icontains=query) 
+                Q(title__icontains=query)
+                | Q(description__icontains=query)
+                | Q(ingredients__icontains=query)
+                | Q(instructions__icontains=query)
+                | Q(meal_type__icontains=query)
             )
         else:
             recipes = self.model.objects.all()
@@ -41,7 +44,7 @@ class Recipes(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Calculate comment count for each post
-        for recipe in context['recipes']:
+        for recipe in context["recipes"]:
             recipe.comment_count = recipe.comments.count()
         return context
 
@@ -69,8 +72,7 @@ def RecipeDetail(request, pk):
             comment.recipe = recipe
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS,
-                'Comment submitted successfully'
+                request, messages.SUCCESS, "Comment submitted successfully"
             )
             return HttpResponseRedirect(request.path_info)
     else:
@@ -78,39 +80,37 @@ def RecipeDetail(request, pk):
 
     return render(
         request,
-         template_name,
+        template_name,
         {
             "recipe": recipe,
-            "liked" : liked,
+            "liked": liked,
             "comments": comments,
             "comment_form": comment_form,
             "comment_count": comment_count,
-            "template_name": template_name
+            "template_name": template_name,
         },
     )
 
 
 def LikeView(request, pk):
-    recipe = get_object_or_404(Recipe, id=request.POST.get('like_id'))
+    recipe = get_object_or_404(Recipe, id=request.POST.get("like_id"))
     liked = False
 
     if recipe.likes.filter(id=request.user.id).exists():
         recipe.likes.remove(request.user)
         liked = False
         messages.add_message(
-            request, messages.SUCCESS,
-            'You have successfully unliked this post!'
-            )
+            request, messages.SUCCESS, "You have successfully unliked this post!"
+        )
 
     else:
         recipe.likes.add(request.user)
         liked = True
         messages.add_message(
-            request, messages.SUCCESS,
-            'You have successfully liked this post!'
-            )
+            request, messages.SUCCESS, "You have successfully liked this post!"
+        )
 
-    return HttpResponseRedirect(reverse('recipe_detail', args=[str(pk)]))
+    return HttpResponseRedirect(reverse("recipe_detail", args=[str(pk)]))
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):
@@ -132,10 +132,11 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     Edit a recipe
     """
-    template_name = 'recipes/edit_recipe.html'
+
+    template_name = "recipes/edit_recipe.html"
     model = Recipe
     form_class = RecipeForm
-    success_url = '/recipes/'
+    success_url = "/recipes/"
 
     def test_func(self):
         return self.request.user == self.get_object().user
@@ -145,8 +146,9 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     Detele a recipe
     """
+
     model = Recipe
-    success_url = '/recipes/'
+    success_url = "/recipes/"
 
     def test_func(self):
         return self.request.user == self.get_object().user
@@ -168,11 +170,12 @@ def comment_edit(request, pk, comment_id):
             comment.recipe = recipe
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.add_message(request, messages.SUCCESS, "Comment Updated!")
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR, "Error updating comment!")
 
-    return HttpResponseRedirect(reverse('recipe_detail', args=[pk]))
+    return HttpResponseRedirect(reverse("recipe_detail", args=[pk]))
+
 
 def comment_delete(request, pk, comment_id):
     """
@@ -183,8 +186,10 @@ def comment_delete(request, pk, comment_id):
 
     if comment.user == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(request, messages.SUCCESS, "Comment deleted!")
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(
+            request, messages.ERROR, "You can only delete your own comments!"
+        )
 
-    return HttpResponseRedirect(reverse('recipe_detail', args=[pk]))
+    return HttpResponseRedirect(reverse("recipe_detail", args=[pk]))
