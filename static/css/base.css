@@ -168,6 +168,10 @@ img.logo {
     margin-top: 14rem !important;
 }
 
+.about-image {
+    width: 75%;
+}
+
 /* Recipes */ 
 .card-recipes {
     position: relative;
