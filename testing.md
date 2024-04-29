@@ -120,7 +120,39 @@ Navigation:
 
 ## Confirmation messages 
 
-- 
+- Sign in message:
+
+![sign in](https://github.com/Idehed/Project2/assets/146822758/aca7c77b-b069-44c5-9fa2-b173cc3f1fca)
+
+- Sign out message:
+
+![sign out](https://github.com/Idehed/Project2/assets/146822758/3d7cadbd-76b6-40c3-ad76-2c034fbfd7cb)
+
+-Like messages:
+
+![like](https://github.com/Idehed/Project2/assets/146822758/7f196f48-ad47-47d9-8b6a-bf978976c51a)
+![unlike](https://github.com/Idehed/Project2/assets/146822758/7db4584f-168a-445c-b145-1ca52bfc5818)
+
+- Comment messages
+
+![comment success](https://github.com/Idehed/Project2/assets/146822758/934a5acf-9425-4a13-9c74-f2f5a496bbcc)
+![comment update](https://github.com/Idehed/Project2/assets/146822758/63196349-4fec-42f4-a91a-9c8e68f7ae50)
+![comment deleted](https://github.com/Idehed/Project2/assets/146822758/b422c26a-798c-47cc-8773-75dffbface6a)
+
+- Contact message
+
+![contact submit success](https://github.com/Idehed/Project2/assets/146822758/b3661435-5edd-426d-8064-ae8b8926d5e4)
+
+- Create,edit and delete recipe message
+
+![create recipe](https://github.com/Idehed/Project2/assets/146822758/7e3d4012-2940-4cf1-b792-4bc9a3e100af)
+![delete recipe](https://github.com/Idehed/Project2/assets/146822758/cbb57fd5-68e3-48ce-876f-d8f45a068a69)
+![edit recipe](https://github.com/Idehed/Project2/assets/146822758/a42e13da-b067-40df-b362-94505a6d9f8a)
+
+- Profile message
+
+![edit profile](https://github.com/Idehed/Project2/assets/146822758/07659295-d5fa-43f7-b5fa-66c29fcc7cbe)
+
 
 ## Automated testing
 
