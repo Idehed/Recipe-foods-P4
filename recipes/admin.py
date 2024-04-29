@@ -4,6 +4,9 @@ from .models import Recipe, CommentRecipe
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
+    """
+    Created to handle the recipe posts
+    """
     list_display = (
         "title",
         "meal_type",

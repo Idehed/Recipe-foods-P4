@@ -93,6 +93,9 @@ def RecipeDetail(request, pk):
 
 
 def LikeView(request, pk):
+    """
+    Handles the like function. Like and unlike recipes
+    """
     recipe = get_object_or_404(Recipe, id=request.POST.get("like_id"))
     liked = False
 
