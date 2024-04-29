@@ -19,8 +19,10 @@ Navigation:
 | Instagram icon | When pressed takes you to Instagram in a new page | Success |
 | Twitter icon | When pressed takes you to Twitter | Success |
 | Youtube icon | When pressed takes you to Youtube | Success |
+| Hamburger dropdown | When pressed the navbar is displayed | Success |
 
 - The Profile, register and sign out navigation links will only be displayed when the user is logged in.
+- The hamburger icon is only displayed from 992px and under.
 
 ### HOME PAGE:
 
