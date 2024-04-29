@@ -154,12 +154,6 @@ img.logo {
    
 }
 
-.background-black {
-    height:100%;
-    width:100%;
-    background-color: #689d66;
-}
-
 .header-text {
     color: var(--white);
 }
