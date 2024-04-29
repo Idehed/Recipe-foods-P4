@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 from .models import Profile
 from .forms import ProfileForm
+from django.contrib import messages
 
 
 class Profiles(TemplateView):
@@ -29,6 +30,10 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         self.success_url = f'/profiles/user/{self.kwargs["pk"]}/'
+        messages.add_message(
+            self.request, messages.SUCCESS,
+            "Profile uppdated successfully!"
+        )
         return super().form_valid(form)
 
     def test_func(self):
