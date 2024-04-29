@@ -130,6 +130,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, "Recipe created successfully!")
         return super(AddRecipe, self).form_valid(form)
 
 
@@ -162,6 +163,9 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         return self.request.user == self.get_object().user
 
+    def form_valid(self, form):
+        messages.success(self.request, "Recipe deleted successfully!")
+        return super().form_valid(form)
 
 def comment_edit(request, pk, comment_id):
     """
