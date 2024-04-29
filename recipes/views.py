@@ -146,6 +146,10 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user == self.get_object().user
 
+    def form_valid(self, form):
+        messages.success(self.request, "Recipe updated successfully!")
+        return super().form_valid(form)
+
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """

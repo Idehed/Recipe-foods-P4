@@ -118,6 +118,10 @@ Navigation:
 | Sign up link | When pressed takes you to the sign up page  | Success |
 
 
+## Confirmation messages 
+
+- 
+
 ## Automated testing
 
 __HTML and CSS__
@@ -212,12 +216,25 @@ Desktop View ![desktop sign out](https://github.com/Idehed/Recipe-foods-P4/asset
 
 <hr> 
 
+## Responsivness
+
+All the pages were tested using the devtools in google chrome with sizes frm 320px and up tp 1400px.
+The website was also opened with my iPhone 13 mini and had no responsive issues.
+
+## Browsers
+
+I tested my website with 4 different browsers:
+- Safari: No issues or erros.
+- Google Chrome: No issues or errros.
+- Microsoft Edge: No issues or erros.
+- Firefox: No issues or errors.
+
 ## Bugs
 
-No bugs on the website now that I know of.
+There are no bugs on the website now that I know of.
 
 Bugs that I found but I manage to solve them:
-- I got this error when trying to delete my own comment. When I tried to exit the modal that open when I pressed "Delete" it display an error in the console. Had to search for it and found a solution on [Stackoverflow](https://stackoverflow.com/). 
+- I got this error when trying to delete my own comment. When I tried to exit the modal that open when I pressed "Delete" it displayed an error in the console. I had to search for it and found a solution on [Stackoverflow](https://stackoverflow.com/). 
 I had to implement if commentElement !== null in the javascript for editbuttons.
 ![error delete](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/9bae2144-cddc-4ddd-a06d-e4e40af44d79)
 
