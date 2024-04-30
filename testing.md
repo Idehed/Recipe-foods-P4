@@ -70,7 +70,7 @@ Navigation:
 | Feature Tested                        | Expected Outcome                 | Result  |
 | ------------------------------------- | -------------------------------- | ------- |
 | DOM |	all page elements load as expected |	Success |
-| Contact form | Your cna type text in every field wihout errors | Success |
+| Contact form | Your can type text in every field wihout errors | Success |
 | Contact from | Can only be sent if all the required fields are filled | Success |
 | Submit button | Sending the message to the admin and a confirm text will be shown | Success |
 
