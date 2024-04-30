@@ -3,7 +3,7 @@ The NourishNShare is a website for people looking for different types of recipes
 
 
 
-[**Live site**]()
+[**Live site**](https://recipe-foods-p4-5bb7b811f6c0.herokuapp.com/)
 
 ![Device Mockups](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/f3d03e20-a42c-4df1-8080-2123ca1fa42e)
 
