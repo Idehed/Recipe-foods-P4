@@ -32,9 +32,9 @@ The NourishNShare is a website for people looking for different types of recipes
 - [Heroku Deployment](#heroku-deployment)
 - [Run Locally](#run-locally)
 - [Technologies](#technologies)
-- [Planning](#planning)
-  - [Wireframes](#wireframes)
-  - [Database schema and Flowchart](#database-schema-and-flowchart)
+- [Planning Project](#planning)
+  - [Wireframes Balsamiq](#wireframes)
+  - [Database schema](#database-schema-and-flowchart)
 - [Security](#security)
 - [Credits](#credits)
 
