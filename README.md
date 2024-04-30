@@ -1,5 +1,5 @@
 # NourishNShare
-The NourishNSHare is a website for people looking for different types of recipes. Here you can share your recipes, and you also can like and comment on a recipe that you find intersting or have opinions to. 
+The NourishNShare is a website for people looking for different types of recipes. Here you can share your recipes, like and comment on a recipe that you find interesting or have opinions on. 
 
 
 
@@ -56,7 +56,7 @@ The NourishNSHare is a website for people looking for different types of recipes
 
 ## User Stories
 
-<b>Following user stories was implemeneted in the project:</b>
+<b>Following user stories was implemented in the project:</b>
 
 - As a Site Admin, I can delete users so that I can manage my recipe website users 
 - As a Site Admin, I can delete users so that I can manage my recipe website users
@@ -72,7 +72,7 @@ As a Site user, I can go to the "about" page so that I can read about the writer
 - As a Site User, I can like recipes that are shared by users
 - As a Site User, I can go to my profile so that I can view my shared recipes
 
-<b>Following user stories was not implemented and labeled as "Wont Have"</b>
+<b>Following user stories was not implemented and labeled as "Won't Have"</b>
 
 - As a Site User, I can rate recipes so that other users can see how good it is
 - As a Site User, I can view my liked recipes so that I can access them easily
@@ -98,13 +98,13 @@ __Fully responsive navbar with links to:__
     - About page 
     - Recipes page
     - Contact page 
-    - Create Recipe page (If the user if authenticated)
-    - Profile page (If the user if authenticated)
+    - Create Recipe page (If the user is authenticated)
+    - Profile page (If the user is authenticated)
     - Register page 
     - Sign out (If the user is authenticated)
     - Sign in 
 
-The Nourishnshare name and the lemon icon is also linked to the home page.
+The NourishNShare name and the lemon icon are also linked to the home page.
 
 
 
@@ -158,7 +158,7 @@ __The About page consists of:__
     
 ![About page](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/1cf8d2fd-3971-4760-b58b-0067e8203620)
     
-This about page gives a small presentation of the Nourishnshare team is.
+This about page gives a small presentation of the Nourishnshare team.
 
 
 <hr>
@@ -187,10 +187,10 @@ Here all the recipes that have been uploaded are displayed with the latest first
 
 The comment section allows the users to post, edit, and delete a comment on a recipe post.
 
+![Recipes detail page comments](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/cf3ecc22-0903-4d3c-8b85-a06d74cbc76d)
+
 The delete modal is shown if the user wants to delete their comment.
 ![Delete modal](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/d0d676dd-2a75-4a80-b94f-dc997be55f19)
-
-![Recipes detail page comments](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/cf3ecc22-0903-4d3c-8b85-a06d74cbc76d)
 
 If the user is authenticated the like button is clickable and changes color to green if liked. It also changed color to green when hovering for a better user experience.
 
@@ -201,7 +201,7 @@ If the user is not authenticated the like button is not clickable.
 
 ![like button not logged in](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/42d22c69-ea9b-4236-8299-a8eceb1b54c8)
 
-If the user is not authenticated the comment section has not buttons for comment, delete or edit. A text with "Sign In" is displayed so the user can navigate to the sign in page to be able to like and comment.
+If the user is not authenticated the comment section has not buttons for comment, delete, or edit. A text with "Sign In" is displayed so the user can navigate to the sign-in page to be able to like and comment.
 
 ![comment section not authenticated](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/77dd5ff6-cb02-41a8-b1bd-dbc6c10c519e)
 
@@ -210,8 +210,6 @@ If the user is not authenticated the comment section has not buttons for comment
 <hr>
 
 ## Contact Page
-
-![Contact Page]()
 
 __The Contact page consists of:__
    
@@ -243,7 +241,7 @@ __Create Recipe form__
 
 The fields the user needs to fill in are:
 
-- Tile
+- Title
 - Description
 - Recipe Ingredients
 - Recipe Instructions
@@ -254,7 +252,7 @@ The fields the user needs to fill in are:
 ![Create Recipe page](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/4d871867-3ad3-41a6-9d66-835372e90f14)
 ![Create Recipe page](https://github.com/Idehed/Recipe-foods-P4/assets/146822758/9433eed5-9cd2-4327-aadd-299aa2b6c7d6)
 
-After successfully added the recipe a confirmation text is displayed.
+After successfully adding the recipe a confirmation text is displayed.
 
 <hr>
 
@@ -283,7 +281,7 @@ __The Sign in Page consists of:__
 
 __Sign in form__
 
-The login form allows the user to enter their credentials and authenticate to enter the sites authenticated state.
+The login form allows the user to enter their credentials and authenticate to enter the site's authenticated state.
 
 The login form also contains a link to the Register page in case the user is not already registered.
 
@@ -515,7 +513,7 @@ __Data storing__:
 - Certain features: 
   - Such as adding recipe( create, edit and delete)
   - Commenting and liking a recipe( create, edit and delete)
-  - Seing a profile page (edit)
+  - Seeing a profile page (edit)
 <br> are reserved for authenticated users only.
 - By requiring users to be logged in to access these features, the application enhances security and ensures that sensitive operations are performed by authorized individuals only.
 
@@ -528,14 +526,14 @@ __Media__:
 - The like and comments icon from [Fontawesome](https://fontawesome.com/)
 - Facebook, Instagram, Twitter, and Youtube icons from [Uxwing](https://uxwing.com/)
 - The home and about images from [Unsplash](https://unsplash.com/)
-<br> Home image creadits to Ella Olsson <br> About image credits to Dan Gold
-- I used this [Youtube](https://www.youtube.com/watch?v=PXqRPqDjDgc&ab_channel=Codemy.com) video to get me started wih the like button.
-- I used this [Yourtube](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=1&ab_channel=DeeMc) video to help me with my website.
-- With the help of this [Youtube](https://www.youtube.com/watch?v=45QSuJaHEss&ab_channel=ADesignerWhoCodes) I was able to change the color of the hamburger nav icon.
+<br> Home image credits to Ella Olsson <br> About image credits to Dan Gold
+- I used this [YouTube](https://www.youtube.com/watch?v=PXqRPqDjDgc&ab_channel=Codemy.com) video to get me started with the like button.
+- I used this [YouTube](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=1&ab_channel=DeeMc) video to help me with my website.
+- With the help of this [YouTube](https://www.youtube.com/watch?v=45QSuJaHEss&ab_channel=ADesignerWhoCodes) I was able to change the color of the hamburger nav icon.
 - I learned more about the Redirects through this website [realpython](https://realpython.com/django-redirects/)
 
 __Other Credits:__
 - The recipe website is based on the I think therefore I blog that I have adapted to fit my project.
 - Thanks to the Slack community for helping me when I got stuck.
-- Thanks to my family that has helped me test my websites functionally.
+- Thanks to my family who has helped me test my websites functionally.
 - Thanks to my mentor Ronan Mc for his support and guidance.
